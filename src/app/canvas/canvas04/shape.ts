@@ -5,7 +5,7 @@ export class Shape extends createjs.Shape {
   vy: number;
   life: number;
 
-  constructor(vx, vy, life) {
+  constructor(vx: number, vy: number, life: number) {
     super();
     this.vx = vx;
     this.vy = vy;
