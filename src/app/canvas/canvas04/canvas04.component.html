@@ -1,7 +1,10 @@
-<canvas #canvas id="canvas" width="600" height="600"></canvas>
-<div class="button-container">
-  <button class="scale" [class.big]="nowScale === 'Big'" (click)="toggleScale()">{{nowScale}}</button>
-  <button class="max-life" [class.long]="nowMaxLife === 'Long'" (click)="toggleMaxLife()">{{nowMaxLife}}</button>
-  <button class="gravity" [class.heavy]="nowGravity === 'Heavy'" (click)="toggleGravity()">{{nowGravity}}</button>
-  <button class="change-background" (click)="changeBackground()">Change Background</button>
+<div class="wrapper">
+  <canvas #canvas id="canvas" width="600" height="600"></canvas>
+  <div class="button-container">
+    <button class="scale" [class.big]="nowScale === 'Big'" (click)="toggleScale()">{{nowScale}}</button>
+    <button class="max-life" [class.long]="nowMaxLife === 'Long'" (click)="toggleMaxLife()">{{nowMaxLife}}</button>
+    <button class="gravity" [class.heavy]="nowGravity === 'Heavy'" (click)="toggleGravity()">{{nowGravity}}</button>
+    <button class="change-background" (click)="changeBackground()">Change Background</button>
+  </div>
+  <button class="go-back" routerLink="">Back</button>
 </div>
