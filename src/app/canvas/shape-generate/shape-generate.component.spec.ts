@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Canvas03Component } from './canvas03.component';
+import { ShapeGenerateComponent } from './shape-generate.component';
 
-describe('Canvas03Component', () => {
-  let component: Canvas03Component;
-  let fixture: ComponentFixture<Canvas03Component>;
+describe('ShapeGenerateComponent', () => {
+  let component: ShapeGenerateComponent;
+  let fixture: ComponentFixture<ShapeGenerateComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [Canvas03Component]
+      declarations: [ShapeGenerateComponent]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Canvas03Component);
+    fixture = TestBed.createComponent(ShapeGenerateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -5,20 +5,16 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { ListComponent } from './list/list.component';
+import { TopComponent } from './top/top.component';
+import { ShapeGenerateComponent } from './canvas/shape-generate/shape-generate.component';
 import { Canvas01Component } from './canvas/canvas01/canvas01.component';
-import { Canvas02Component } from './canvas/canvas02/canvas02.component';
-import { Canvas03Component } from './canvas/canvas03/canvas03.component';
-import { Canvas04Component } from './canvas/canvas04/canvas04.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListComponent,
+    TopComponent,
+    ShapeGenerateComponent,
     Canvas01Component,
-    Canvas02Component,
-    Canvas03Component,
-    Canvas04Component,
   ],
   imports: [
     BrowserModule,

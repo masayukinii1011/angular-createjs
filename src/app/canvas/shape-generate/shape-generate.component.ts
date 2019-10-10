@@ -3,11 +3,11 @@ import * as createjs from 'createjs-module';
 import { ShapeGenerator } from './shapeGenerator';
 
 @Component({
-  selector: 'app-canvas04',
-  templateUrl: './canvas04.component.html',
-  styleUrls: ['./canvas04.component.scss']
+  selector: 'app-shape-generate',
+  templateUrl: './shape-generate.component.html',
+  styleUrls: ['./shape-generate.component.scss']
 })
-export class Canvas04Component implements AfterViewInit {
+export class ShapeGenerateComponent implements AfterViewInit {
   stage: createjs.Stage;
   background: createjs.Shape;
   bg1 = '#ff9a9e';
