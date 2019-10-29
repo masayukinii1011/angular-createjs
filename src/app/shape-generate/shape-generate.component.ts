@@ -20,6 +20,9 @@ export class ShapeGenerateComponent implements AfterViewInit {
   gravity = 0.1;
   nowGravity = 'Light';
 
+  width:number = 600;
+  height:number = 600;
+
   constructor() { }
 
   ngAfterViewInit() {

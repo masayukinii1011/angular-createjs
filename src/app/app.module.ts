@@ -6,15 +6,19 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { TopComponent } from './top/top.component';
-import { ShapeGenerateComponent } from './canvas/shape-generate/shape-generate.component';
-import { Canvas01Component } from './canvas/canvas01/canvas01.component';
+import { ShapeGenerateComponent } from './shape-generate/shape-generate.component';
+import { ButtonComponent } from './button/button.component';
+import { ButtonContainerComponent } from './button-container/button-container.component';
+import { CanvasComponent } from './canvas/canvas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopComponent,
     ShapeGenerateComponent,
-    Canvas01Component,
+    ButtonComponent,
+    ButtonContainerComponent,
+    CanvasComponent,
   ],
   imports: [
     BrowserModule,

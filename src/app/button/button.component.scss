@@ -1,21 +1,3 @@
-.wrapper {
-  width: 600px;
-}
-
-canvas {
-  background: #ddd;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
-}
-
-.button-container {
-  width :600px;
-  display: flex;
-  justify-content: space-between;
-  margin:16px 0 20px;
-}
-
 button {
   appearance: none;
   outline: none;
@@ -38,31 +20,31 @@ button {
     transform: translateY(2px);
   }
 
-  &.scale {
+  &.red {
     background-color: #E57373;
 
-    &.big {
+    &.work {
       background-color: darken(#E57373, 36%);
     }
   }
 
-  &.max-life {
+  &.blue {
     background-color: #64B5F6;
 
-    &.long {
+    &.work {
       background-color: darken(#64B5F6, 36%);
     }
   }
 
-  &.gravity {
+  &.yellow {
     background-color: #FFD54F;
 
-    &.heavy {
+    &.work {
       background-color: darken(#FFD54F, 36%);
     }
   }
 
-  &.change-background {
+  &.green {
     background-color: #4DB6AC;
 
     &:active {
@@ -70,7 +52,7 @@ button {
     }
   }
 
-  &.go-back {
+  &.black {
     display: block;
     background-color: #444;
     margin: 0 auto;

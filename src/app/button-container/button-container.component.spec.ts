@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Canvas01Component } from './canvas01.component';
+import { ButtonContainerComponent } from './button-container.component';
 
-describe('Canvas01Component', () => {
-  let component: Canvas01Component;
-  let fixture: ComponentFixture<Canvas01Component>;
+describe('ButtonContainerComponent', () => {
+  let component: ButtonContainerComponent;
+  let fixture: ComponentFixture<ButtonContainerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Canvas01Component ]
+      declarations: [ ButtonContainerComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Canvas01Component);
+    fixture = TestBed.createComponent(ButtonContainerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
