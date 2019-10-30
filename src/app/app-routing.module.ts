@@ -4,8 +4,8 @@ import { TopComponent } from './top/top.component';
 import { ShapeGenerateComponent } from './shape-generate/shape-generate.component';
 
 const routes: Routes = [
-  { path: '', component: TopComponent },
-  { path: 'shape-generate', component: ShapeGenerateComponent },
+  { path: '', component: TopComponent, data: {animation: 'top'} },
+  { path: 'shape-generate', component: ShapeGenerateComponent, data: {animation: 'shapeGenerate'} },
   { path: '*', redirectTo: '', pathMatch: 'full' },
 ];
 
