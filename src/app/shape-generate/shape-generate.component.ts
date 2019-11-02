@@ -1,65 +1,51 @@
 import { Component, AfterViewInit } from '@angular/core';
 import * as createjs from 'createjs-module';
+import { CreateJsService } from '../service/create-js.service';
 import { ShapeGenerator } from './shapeGenerator';
 
 @Component({
   selector: 'app-shape-generate',
   templateUrl: './shape-generate.component.html',
-  styleUrls: ['./shape-generate.component.scss']
+  styleUrls: ['./shape-generate.component.scss'],
+  providers: [CreateJsService]
 })
 export class ShapeGenerateComponent implements AfterViewInit {
-  stage: createjs.Stage;
-  background: createjs.Shape;
-  bg1 = '#ff9a9e';
-  bg2 = '#a18cd1';
-  shapeGenerator: ShapeGenerator;
-  scale = 1;
-  nowScale = 'Small';
-  maxLife = 100;
-  nowMaxLife = 'Short';
-  gravity = 0.1;
-  nowGravity = 'Light';
+  private object: ShapeGenerator;
+  private bg1 = '#ff9a9e';
+  private bg2 = '#a18cd1';
+  private scale = 1;
+  private maxLife = 100;
+  private gravity = 0.1;
 
-  width:number = 600;
-  height:number = 600;
+  public nowScale = 'Small';
+  public nowMaxLife = 'Short';
+  public nowGravity = 'Light';
 
-  constructor() { }
+  width = 600;
+  height = 600;
+
+  constructor(private createJsService: CreateJsService) {
+    this.object = new ShapeGenerator();
+  }
 
   ngAfterViewInit() {
-    this.initStage();
-    this.setBackground(this.bg1, this.bg2);
-    this.initShape();
-    this.initTicker();
-  }
-
-  initStage() {
-    this.stage = new createjs.Stage('canvas');
-  }
-
-  setBackground(bg1, bg2) {
-    this.background = new createjs.Shape();
-    this.background.graphics.beginRadialGradientFill([bg1, bg2], [1, 0], 0, 0, 0, 300, 300, 600)
-      .rect(0, 0, 600, 600);
-    this.background.alpha = 0.4;
-    this.background.cache(0, 0, 600, 600);
-    this.stage.addChild(this.background);
-  }
-
-  initShape() {
-    this.shapeGenerator = new ShapeGenerator();
-  }
-
-  initTicker() {
-    createjs.Ticker.framerate = 60;
+    this.createJsService.setStage();
+    this.createJsService.setObject(this.object);
+    this.createJsService.setTicker();
+    createjs.Ticker.addEventListener('tick', this.update.bind(this));
     createjs.Ticker.addEventListener('tick', this.draw.bind(this));
+    this.createJsService.setBackground(this.bg1, this.bg2);
   }
 
-  draw() {
-    this.shapeGenerator.generate(this.stage, this.scale, this.maxLife, this.gravity);
-    this.stage.update();
+  private update() {
+    this.createJsService.update();
   }
 
-  toggleScale() {
+  private draw() {
+    this.object.draw(this.createJsService.stage, this.scale, this.maxLife, this.gravity);
+  }
+
+  public toggleScale() {
     if (this.scale === 1) {
       this.scale = 4;
       this.nowScale = 'Big';
@@ -69,7 +55,7 @@ export class ShapeGenerateComponent implements AfterViewInit {
     }
   }
 
-  toggleMaxLife() {
+  public toggleMaxLife() {
     if (this.maxLife === 100) {
       this.maxLife = 400;
       this.nowMaxLife = 'Long';
@@ -79,7 +65,7 @@ export class ShapeGenerateComponent implements AfterViewInit {
     }
   }
 
-  toggleGravity() {
+  public toggleGravity() {
     if (this.gravity === 0.1) {
       this.gravity = 1;
       this.nowGravity = 'Heavy';
@@ -89,7 +75,7 @@ export class ShapeGenerateComponent implements AfterViewInit {
     }
   }
 
-  changeBackground() {
+  public changeBackground() {
     if (this.bg1 === '#ff9a9e') {
       this.bg1 = '#fda085';
     } else if (this.bg1 === '#fda085') {
@@ -106,6 +92,6 @@ export class ShapeGenerateComponent implements AfterViewInit {
     } else if (this.bg2 === '#84fab0') {
       this.bg2 = '#a18cd1';
     }
-    this.setBackground(this.bg1, this.bg2);
+    this.createJsService.setBackground(this.bg1, this.bg2);
   }
 }

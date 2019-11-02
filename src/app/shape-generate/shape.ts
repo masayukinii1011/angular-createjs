@@ -1,9 +1,9 @@
 import * as createjs from 'createjs-module';
 
 export class Shape extends createjs.Shape {
-  vx: number;
-  vy: number;
-  life: number;
+  public vx: number;
+  public vy: number;
+  public life: number;
 
   constructor(vx: number, vy: number, life: number) {
     super();

@@ -1,14 +1,14 @@
 <div class="button-container">
-  <app-button [class]="color1" [isWork]="isWork1" (buttonClickEvent)="buttonClick1()">
+  <app-button [class]="color1" [isWork]="isWork1" (buttonClick)="buttonClick1.emit()">
     {{label1}}
   </app-button>
-  <app-button [class]="color2" [isWork]="isWork2" (buttonClickEvent)="buttonClick2()">
+  <app-button [class]="color2" [isWork]="isWork2" (buttonClick)="buttonClick2.emit()">
     {{label2}}
   </app-button>
-  <app-button [class]="color3" [isWork]="isWork3" (buttonClickEvent)="buttonClick3()">
+  <app-button [class]="color3" [isWork]="isWork3" (buttonClick)="buttonClick3.emit()">
     {{label3}}
   </app-button>
-  <app-button [class]="color4" (buttonClickEvent)="buttonClick4()">
+  <app-button [class]="color4" (buttonClick)="buttonClick4.emit()">
     {{label4}}
   </app-button>
 </div>

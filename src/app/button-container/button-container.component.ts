@@ -20,29 +20,13 @@ export class ButtonContainerComponent implements OnInit {
   @Input() isWork2: boolean;
   @Input() isWork3: boolean;
 
-  @Output() buttonClickEvent1 = new EventEmitter();
-  @Output() buttonClickEvent2 = new EventEmitter();
-  @Output() buttonClickEvent3 = new EventEmitter();
-  @Output() buttonClickEvent4 = new EventEmitter();
+  @Output() buttonClick1 = new EventEmitter();
+  @Output() buttonClick2 = new EventEmitter();
+  @Output() buttonClick3 = new EventEmitter();
+  @Output() buttonClick4 = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
-  }
-
-  buttonClick1() {
-    this.buttonClickEvent1.emit();
-  }
-
-  buttonClick2() {
-    this.buttonClickEvent2.emit();
-  }
-
-  buttonClick3() {
-    this.buttonClickEvent3.emit();
-  }
-
-  buttonClick4() {
-    this.buttonClickEvent4.emit();
   }
 }

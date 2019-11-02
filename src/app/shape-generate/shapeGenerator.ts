@@ -2,16 +2,16 @@ import * as createjs from 'createjs-module';
 import { Shape } from './shape';
 
 export class ShapeGenerator {
-  shape: Shape;
-  shapes: any = [];
-  vx: number;
-  vy: number;
-  life: number;
+  private shape: Shape;
+  private shapes: any = [];
+  private vx: number;
+  private vy: number;
+  private life: number;
 
   constructor() { }
 
   // 図形生成
-  generate(stage: any, scale: number, maxLife: number, gravity: number) {
+  public draw(stage: any, scale: number, maxLife: number, gravity: number) {
     this.vx = 30 * (Math.random() - 0.5);
     this.vy = 30 * (Math.random() - 0.5);
     this.life = maxLife * (Math.random() - 0.5);

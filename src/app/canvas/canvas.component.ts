@@ -6,8 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./canvas.component.scss']
 })
 export class CanvasComponent implements OnInit {
-  @Input() width:number;
-  @Input() height:number;
+  @Input() width: number;
+  @Input() height: number;
 
   constructor() { }
 
