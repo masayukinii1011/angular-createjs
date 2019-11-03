@@ -18,10 +18,10 @@ export const Animations =
       query(':leave', animateChild()),
       group([
         query(':leave', [
-          animate('.4s ease-out', style({ opacity: 0 }))
+          animate('.3s ease-out', style({ opacity: 0 }))
         ]),
         query(':enter', [
-          animate('.4s ease-out', style({ transform: 'translateY(0)', opacity: 1 }))
+          animate('.3s ease-out', style({ transform: 'translateY(0)', opacity: 1 }))
         ])
       ]),
       query(':enter', animateChild()),
@@ -42,10 +42,10 @@ export const Animations =
       query(':leave', animateChild()),
       group([
         query(':leave', [
-          animate('.4s ease-in', style({ transform: 'translateY(400px)', opacity: 0 }))
+          animate('.3s ease-in', style({ transform: 'translateY(400px)', opacity: 0 }))
         ]),
         query(':enter', [
-          animate('.4s ease-in', style({ opacity: 1 }))
+          animate('.3s ease-in', style({ opacity: 1 }))
         ])
       ]),
       query(':enter', animateChild()),

@@ -10,10 +10,24 @@ export class CreateJsService {
   private background: createjs.Shape;
   private bg = ['#ff9a9e', '#fda085', '#96e6a1', '#e2ebf0', '#a18cd1', '#ffecd2', '#84fab0'];
   public margin = '0 auto';
-  public width = 600;
-  public height = 600;
 
-  constructor() { }
+  private innerWidth = window.innerWidth * 0.94;
+  private innerHeight = window.innerHeight * 0.82;
+
+  public width: number;
+  public height: number;
+
+  setSize() {
+    if (this.innerWidth < this.innerHeight) {
+      this.width = this.height = this.innerWidth;
+    } else {
+      this.width = this.height = this.innerHeight;
+    }
+  }
+
+  constructor() {
+    this.setSize();
+  }
 
   public setStage() {
     this.stage = new createjs.Stage('canvas');
