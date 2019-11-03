@@ -11,6 +11,7 @@ import { ShapeGenerateComponent } from './shape-generate/shape-generate.componen
 import { ButtonComponent } from './button/button.component';
 import { ButtonContainerComponent } from './button-container/button-container.component';
 import { CanvasComponent } from './canvas/canvas.component';
+import { AbcComponent } from './abc/abc.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { CanvasComponent } from './canvas/canvas.component';
     ButtonComponent,
     ButtonContainerComponent,
     CanvasComponent,
+    AbcComponent,
   ],
   imports: [
     BrowserModule,

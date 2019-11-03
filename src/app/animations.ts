@@ -2,7 +2,7 @@ import { trigger, transition, style, query, animateChild, group, animate } from 
 
 export const Animations =
   trigger('routeAnimations', [
-    transition('top => shapeGenerate', [
+    transition('top => createJs', [
       style({ position: 'relative' }),
       query(':enter, :leave', [
         style({
@@ -13,20 +13,20 @@ export const Animations =
         })
       ]),
       query(':enter', [
-        style({ transform: 'translateY(400px)', opacity: 0})
+        style({ transform: 'translateY(400px)', opacity: 0 })
       ]),
       query(':leave', animateChild()),
       group([
         query(':leave', [
-          animate('.4s ease-out', style({ opacity: 0}))
+          animate('.4s ease-out', style({ opacity: 0 }))
         ]),
         query(':enter', [
-          animate('.4s ease-out', style({ transform: 'translateY(0)', opacity: 1}))
+          animate('.4s ease-out', style({ transform: 'translateY(0)', opacity: 1 }))
         ])
       ]),
       query(':enter', animateChild()),
     ]),
-    transition('shapeGenerate => top', [
+    transition('createJs => top', [
       style({ position: 'relative' }),
       query(':enter, :leave', [
         style({
@@ -37,15 +37,15 @@ export const Animations =
         })
       ]),
       query(':enter', [
-        style({ opacity: 0})
+        style({ opacity: 0 })
       ]),
       query(':leave', animateChild()),
       group([
         query(':leave', [
-          animate('.4s ease-in', style({ transform: 'translateY(400px)', opacity: 0}))
+          animate('.4s ease-in', style({ transform: 'translateY(400px)', opacity: 0 }))
         ]),
         query(':enter', [
-          animate('.4s ease-in', style({ opacity: 1}))
+          animate('.4s ease-in', style({ opacity: 1 }))
         ])
       ]),
       query(':enter', animateChild()),

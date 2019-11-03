@@ -1,4 +1,4 @@
-<div class="button-container">
+<div [style.width.px]="width">
   <app-button [class]="color1" [isWork]="isWork1" (buttonClick)="buttonClick1.emit()">
     {{label1}}
   </app-button>

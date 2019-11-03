@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as createjs from 'createjs-module';
 import { CreateJsService } from '../service/create-js.service';
 import { ShapeGenerator } from './shapeGenerator';
@@ -9,10 +9,13 @@ import { ShapeGenerator } from './shapeGenerator';
   styleUrls: ['./shape-generate.component.scss'],
   providers: [CreateJsService]
 })
-export class ShapeGenerateComponent implements AfterViewInit {
+export class ShapeGenerateComponent implements OnInit {
   private object: ShapeGenerator;
-  private bg1 = '#ff9a9e';
-  private bg2 = '#a18cd1';
+
+  public margin: string;
+  public width: number;
+  public height: number;
+
   private scale = 1;
   private maxLife = 100;
   private gravity = 0.1;
@@ -21,20 +24,19 @@ export class ShapeGenerateComponent implements AfterViewInit {
   public nowMaxLife = 'Short';
   public nowGravity = 'Light';
 
-  width = 600;
-  height = 600;
+  constructor(private createJsService: CreateJsService) { }
 
-  constructor(private createJsService: CreateJsService) {
+  ngOnInit() {
     this.object = new ShapeGenerator();
-  }
-
-  ngAfterViewInit() {
+    this.margin = this.createJsService.margin;
+    this.width = this.createJsService.width;
+    this.height = this.createJsService.height;
     this.createJsService.setStage();
     this.createJsService.setObject(this.object);
     this.createJsService.setTicker();
     createjs.Ticker.addEventListener('tick', this.update.bind(this));
     createjs.Ticker.addEventListener('tick', this.draw.bind(this));
-    this.createJsService.setBackground(this.bg1, this.bg2);
+    this.setBackground();
   }
 
   private update() {
@@ -75,23 +77,7 @@ export class ShapeGenerateComponent implements AfterViewInit {
     }
   }
 
-  public changeBackground() {
-    if (this.bg1 === '#ff9a9e') {
-      this.bg1 = '#fda085';
-    } else if (this.bg1 === '#fda085') {
-      this.bg1 = '#96e6a1';
-    } else if (this.bg1 === '#96e6a1') {
-      this.bg1 = '#e2ebf0';
-    } else if (this.bg1 === '#e2ebf0') {
-      this.bg1 = '#ff9a9e';
-    }
-    if (this.bg2 === '#a18cd1') {
-      this.bg2 = '#ffecd2';
-    } else if (this.bg2 === '#ffecd2') {
-      this.bg2 = '#84fab0';
-    } else if (this.bg2 === '#84fab0') {
-      this.bg2 = '#a18cd1';
-    }
-    this.createJsService.setBackground(this.bg1, this.bg2);
+  public setBackground() {
+    this.createJsService.setBackground();
   }
 }

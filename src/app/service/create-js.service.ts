@@ -7,7 +7,11 @@ import * as createjs from 'createjs-module';
 export class CreateJsService {
   public stage: createjs.Stage;
   public object: createjs.Shape;
-  public background: createjs.Shape;
+  private background: createjs.Shape;
+  private bg = ['#ff9a9e', '#fda085', '#96e6a1', '#e2ebf0', '#a18cd1', '#ffecd2', '#84fab0'];
+  public margin = '0 auto';
+  public width = 600;
+  public height = 600;
 
   constructor() { }
 
@@ -27,12 +31,19 @@ export class CreateJsService {
     this.stage.update();
   }
 
-  public setBackground(bg1, bg2) {
+  public setBackground() {
+    // ランダムに並び替え
+    for (let i = this.bg.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const tmp = this.bg[i];
+      this.bg[i] = this.bg[j];
+      this.bg[j] = tmp;
+    }
     this.background = new createjs.Shape();
-    this.background.graphics.beginRadialGradientFill([bg1, bg2], [1, 0], 0, 0, 0, 300, 300, 600)
-      .rect(0, 0, 600, 600);
+    this.background.graphics.beginRadialGradientFill([this.bg[0], this.bg[1]], [1, 0], 0, 0, 0, 300, 300, 600)
+      .rect(0, 0, this.width, this.height);
     this.background.alpha = 0.4;
-    this.background.cache(0, 0, 600, 600);
+    this.background.cache(0, 0, this.width, this.height);
     this.stage.addChild(this.background);
   }
 }

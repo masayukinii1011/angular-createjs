@@ -6,6 +6,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./button-container.component.scss']
 })
 export class ButtonContainerComponent implements OnInit {
+  @Input() width: number;
+
   @Input() color1: string;
   @Input() color2: string;
   @Input() color3: string;

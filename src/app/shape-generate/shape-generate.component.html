@@ -1,9 +1,10 @@
-<div class="shape-generate" [style.width.px]="width">
+<div [style.width.px]="width" [style.margin]="margin">
   <app-canvas [width]="width" [height]="height"></app-canvas>
-  <app-button-container [label1]="nowScale" [label2]="nowMaxLife" [label3]="nowGravity" [label4]="'Change Background'"
-    [isWork1]="nowScale === 'Big'" [isWork2]="nowMaxLife === 'Long'" [isWork3]="nowGravity === 'Heavy'" [color1]="'red'"
-    [color2]="'blue'" [color3]="'yellow'" [color4]="'green'" (buttonClick1)="toggleScale()"
-    (buttonClick2)="toggleMaxLife()" (buttonClick3)="toggleGravity()" (buttonClick4)="changeBackground()">
+  <app-button-container [width]="width" [label1]="nowScale" [label2]="nowMaxLife" [label3]="nowGravity"
+    [label4]="'Change Background'" [isWork1]="nowScale === 'Big'" [isWork2]="nowMaxLife === 'Long'"
+    [isWork3]="nowGravity === 'Heavy'" [color1]="'red'" [color2]="'blue'" [color3]="'yellow'" [color4]="'green'"
+    (buttonClick1)="toggleScale()" (buttonClick2)="toggleMaxLife()" (buttonClick3)="toggleGravity()"
+    (buttonClick4)="setBackground()">
   </app-button-container>
   <app-button [class]="'black'" [link]="'/'">
     Back
