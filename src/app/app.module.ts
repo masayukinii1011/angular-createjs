@@ -12,6 +12,9 @@ import { ButtonComponent } from './button/button.component';
 import { ButtonContainerComponent } from './button-container/button-container.component';
 import { CanvasComponent } from './canvas/canvas.component';
 import { AbcComponent } from './abc/abc.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -24,10 +27,12 @@ import { AbcComponent } from './abc/abc.component';
     AbcComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

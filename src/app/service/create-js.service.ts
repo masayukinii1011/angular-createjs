@@ -17,16 +17,16 @@ export class CreateJsService {
   public width: number;
   public height: number;
 
-  setSize() {
+  constructor() {
+    this.setSize();
+  }
+
+  private setSize() {
     if (this.innerWidth < this.innerHeight) {
       this.width = this.height = this.innerWidth;
     } else {
       this.width = this.height = this.innerHeight;
     }
-  }
-
-  constructor() {
-    this.setSize();
   }
 
   public setStage() {
