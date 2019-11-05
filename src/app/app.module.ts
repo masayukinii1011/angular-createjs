@@ -9,9 +9,8 @@ import { AppComponent } from './app.component';
 import { TopComponent } from './top/top.component';
 import { ShapeGenerateComponent } from './shape-generate/shape-generate.component';
 import { ButtonComponent } from './button/button.component';
-import { ButtonContainerComponent } from './button-container/button-container.component';
 import { CanvasComponent } from './canvas/canvas.component';
-import { AbcComponent } from './abc/abc.component';
+import { MovingCircleComponent } from './moving-circle/moving-circle.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { RouterModule } from '@angular/router';
@@ -22,9 +21,8 @@ import { RouterModule } from '@angular/router';
     TopComponent,
     ShapeGenerateComponent,
     ButtonComponent,
-    ButtonContainerComponent,
     CanvasComponent,
-    AbcComponent,
+    MovingCircleComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

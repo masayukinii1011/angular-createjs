@@ -10,23 +10,20 @@ export class CreateJsService {
   private background: createjs.Shape;
   private bg = ['#ff9a9e', '#fda085', '#96e6a1', '#e2ebf0', '#a18cd1', '#ffecd2', '#84fab0'];
   public margin = '0 auto';
+  public size: number;
 
-  private innerWidth = window.innerWidth * 0.94;
-  private innerHeight = window.innerHeight * 0.82;
+  private width = window.innerWidth * 0.94;
+  private height = window.innerHeight * 0.82;
 
-  public width: number;
-  public height: number;
+  constructor() { }
 
-  constructor() {
-    this.setSize();
-  }
-
-  private setSize() {
-    if (this.innerWidth < this.innerHeight) {
-      this.width = this.height = this.innerWidth;
+  public setSize() {
+    if (this.width < this.height) {
+      this.size = this.width;
     } else {
-      this.width = this.height = this.innerHeight;
+      this.size = this.height;
     }
+    return this.size;
   }
 
   public setStage() {
@@ -55,9 +52,9 @@ export class CreateJsService {
     }
     this.background = new createjs.Shape();
     this.background.graphics.beginRadialGradientFill([this.bg[0], this.bg[1]], [1, 0], 0, 0, 0, 300, 300, 600)
-      .rect(0, 0, this.width, this.height);
+      .rect(0, 0, this.size, this.size);
     this.background.alpha = 0.4;
-    this.background.cache(0, 0, this.width, this.height);
+    this.background.cache(0, 0, this.size, this.size);
     this.stage.addChild(this.background);
   }
 }

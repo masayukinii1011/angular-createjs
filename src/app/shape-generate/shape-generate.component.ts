@@ -11,10 +11,8 @@ import { ShapeGenerator } from './shapeGenerator';
 })
 export class ShapeGenerateComponent implements OnInit {
   private object: ShapeGenerator;
-
   public margin: string;
-  public width: number;
-  public height: number;
+  public size: number;
 
   private scale = 1;
   private maxLife = 100;
@@ -29,8 +27,7 @@ export class ShapeGenerateComponent implements OnInit {
   ngOnInit() {
     this.object = new ShapeGenerator();
     this.margin = this.createJsService.margin;
-    this.width = this.createJsService.width;
-    this.height = this.createJsService.height;
+    this.size = this.createJsService.setSize();
     this.createJsService.setStage();
     this.createJsService.setObject(this.object);
     this.createJsService.setTicker();

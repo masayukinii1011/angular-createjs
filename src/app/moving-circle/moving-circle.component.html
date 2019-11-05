@@ -1,0 +1,18 @@
+<div [style.width.px]="size" [style.margin]="margin">
+  <app-canvas [width]="size" [height]="size"></app-canvas>
+  <div class="control-panel" [style.width.px]="size">
+    <input type='color' [(ngModel)]="color">
+    <input type='number' min="10" max="50" step="10" [(ngModel)]="circleSize">
+    <input type='number' min="500" max="1000" step="100" [(ngModel)]="speed">
+    <input type='number' min="0" [max]="size" step="10" [(ngModel)]="x1">
+    <input type='number' min="0" [max]="size" step="10" [(ngModel)]="y1">
+    <input type='number' min="0" [max]="size" step="10" [(ngModel)]="x2">
+    <input type='number' min="0" [max]="size" step="10" [(ngModel)]="y2">
+    <input type='number' min="0" [max]="size" step="10" [(ngModel)]="x3">
+    <input type='number' min="0" [max]="size" step="10" [(ngModel)]="y3">
+    <app-button (buttonClick)="draw()">Draw</app-button>
+  </div>
+  <app-button [class]="'black'" [link]="'/'">
+    Back
+  </app-button>
+</div>
