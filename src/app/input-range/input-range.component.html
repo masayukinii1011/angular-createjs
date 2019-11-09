@@ -1,0 +1,7 @@
+<div class="range-container">
+  <div class="range-label">
+    <ng-content></ng-content>
+  </div>
+  <input type="range" [min]="min" [max]="max" [step]="step" [value]="value"
+    (change)="valueChange.emit($event.target.value)">
+</div>

@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CreateJsService } from './createjs.service';
+import { CreateJsService } from './create-js.service';
 
 describe('CreateJsService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

@@ -29,7 +29,7 @@ export class MovingCircleComponent implements OnInit {
     this.createJsService.setTicker();
     createjs.Ticker.addEventListener('tick', this.update.bind(this));
     this.draw();
-    this.setBackground();
+    this.createJsService.setBackground();
   }
 
   private update() {
@@ -38,9 +38,5 @@ export class MovingCircleComponent implements OnInit {
 
   public draw() {
     this.object.draw(this.createJsService.stage, this.size, this.circleSize, this.speed, this.transparency);
-  }
-
-  public setBackground() {
-    this.createJsService.setBackground();
   }
 }

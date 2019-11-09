@@ -14,6 +14,7 @@ import { MovingCircleComponent } from './moving-circle/moving-circle.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { RouterModule } from '@angular/router';
+import { InputRangeComponent } from './input-range/input-range.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { RouterModule } from '@angular/router';
     ButtonComponent,
     CanvasComponent,
     MovingCircleComponent,
+    InputRangeComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

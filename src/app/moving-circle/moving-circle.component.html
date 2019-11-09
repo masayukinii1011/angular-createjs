@@ -1,18 +1,15 @@
 <div [style.width.px]="size" [style.margin]="margin">
   <app-canvas [width]="size" [height]="size"></app-canvas>
   <div class="control-panel" [style.width.px]="size">
-    <div class="range-container">
-      <div class="range-label">Size</div>
-      <input type="range" min="0.02" max="0.2" step="0.001" [(ngModel)]="circleSize">
-    </div>
-    <div class="range-container">
-      <div class="range-label">Speed</div>
-      <input type="range" min="-4000" max="-1000" [(ngModel)]="speed">
-    </div>
-    <div class="range-container">
-      <div class="range-label">Transparency</div>
-      <input type="range" min="-2" max="-0.1" step="0.01" [(ngModel)]="transparency">
-    </div>
+    <app-input-range [min]="0.02" [max]="0.2" [step]="0.001" [(value)]="circleSize">
+      Size
+    </app-input-range>
+    <app-input-range [min]="-4000" [max]="-1000" [(value)]="speed">
+      Speed
+    </app-input-range>
+    <app-input-range [min]="-2" [max]="-0.1" [step]="0.01" [(value)]="transparency">
+      Transparency
+    </app-input-range>
     <app-button [class]="'pink'" (buttonClick)="draw()">Launch</app-button>
   </div>
   <app-button [class]="'black'" [link]="'/'">

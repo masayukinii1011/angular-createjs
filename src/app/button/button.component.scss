@@ -1,5 +1,4 @@
 button {
-  -webkit-appearance: none;
   appearance: none;
   outline: none;
   font-size: 18px;
@@ -81,7 +80,6 @@ button {
     width: 300px;
     height: 100px;
     margin: 64px auto;
-    opacity: 0.9;
     background-size: 200% auto;
 
     &:hover {
@@ -90,11 +88,11 @@ button {
     }
 
     &.shape-generate {
-      background-image: linear-gradient(to right, #FF512F 0%, #DD2476 51%, #FF512F 100%);
+      background-image: linear-gradient(to right, #DD5E89 0%, #F7BB97 51%, #DD5E89 100%);
     }
 
     &.moving-circle {
-      background-image: linear-gradient(to right, #834d9b 0%, #d04ed6 51%, #834d9b 100%);
+      background-image: linear-gradient(to right, #77A1D3 0%, #79CBCA 51%, #77A1D3 100%);
     }
   }
 }
