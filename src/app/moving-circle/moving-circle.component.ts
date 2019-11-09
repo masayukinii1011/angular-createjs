@@ -14,15 +14,9 @@ export class MovingCircleComponent implements OnInit {
   public margin: string;
   public size: number;
 
-  public color = '#000';
-  public circleSize = 10;
-  public speed = 500;
-  public x1 = 100;
-  public y1 = 100;
-  public x2 = 200;
-  public y2 = 200;
-  public x3 = 300;
-  public y3 = 300;
+  public circleSize = 0.02;
+  public speed = -4000;
+  public transparency = -100;
 
   constructor(private createJsService: CreateJsService) { }
 
@@ -43,7 +37,7 @@ export class MovingCircleComponent implements OnInit {
   }
 
   public draw() {
-    this.object.draw(this.createJsService.stage, this.color, this.circleSize, this.speed, this.x1, this.y1, this.x2, this.y2, this.x3, this.y3);
+    this.object.draw(this.createJsService.stage, this.size, this.circleSize, this.speed, this.transparency);
   }
 
   public setBackground() {
