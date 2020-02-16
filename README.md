@@ -5,27 +5,27 @@ Angularを使用してアニメーション生成アプリを作成しました�
 ### createJS
 canvasを操作できるJavaScriptライブラリです。
 createJSを使用することで、canvas単体よりも描画が簡単になります。
-`npm install createjs-module`でインストールできます。
-参考記事：
+`npm install createjs-module`でインストールできます。  
+参考記事：  
 https://ics.media/tutorial-createjs/
 
-AngularアプリでcreateJS使用するには下記を参考にしました。
-参考記事：
+AngularアプリでcreateJS使用するには下記を参考にしました。  
+参考記事：  
 https://qiita.com/clockmaker/items/c9dfe8985d35208a9cb1
 
-ページに共通する処理はcreateJsServiceとして切り出しました。
-参考記事：
+ページに共通する処理はcreateJsServiceとして切り出しました。  
+参考記事：  
 http://www.fumiononaka.com/Business/html5/FN1805009.html
 
 ### Animation
-ページ遷移時のアニメーションにはAngularのAnimation機能を使用しています。
-参考記事：
+ページ遷移時のアニメーションにはAngularのAnimation機能を使用しています。  
+参考記事：  
 https://qiita.com/maaz118/items/c54513537edfa03bc43c
 
 ### PWA
-AngularアプリのPWA対応は簡単です。
-基本的には`ng add @angular/pwa`のコマンドのみです。
-参考記事：
+AngularアプリのPWA対応は簡単です。  
+基本的には`ng add @angular/pwa`のコマンドのみです。  
+参考記事：  
 https://qiita.com/puku0x/items/a6db78cc67d1eb960384
 
 # AngularCreatejs
